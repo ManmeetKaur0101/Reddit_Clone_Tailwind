@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reddit Clone based on Tailwind</title>
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class="bg-[#0e1113] p-0 m-0">
+  <!-- header-section -->
+  <!-- header -->
+  <div
+    class="h-[7vh] h-max[7vh] border-b md:justify-normal justify-between bg-[#0e1113] border-[#3e4142]  w-full flex fixed top-0 z-50 md:mr-5">
+    <!-- left-section -->
+    <div class=" no-select w-fit flex items-center h-full  md:flex-1 ">
+      <!-- smaller-screen -->
+      <div class="flex md:hidden w-fit  mx-2 min-w-38 visible-1290-668 ">
+        <img class="h-8 w-8 min-h-[32px] min-w-[32px]" id="ham-burger-menu" src="/assets/icons/ham-burger-menu.svg"
+          alt="ham-burger-menu">
+        <img class="h-8 w-7 min-h-[32px] min-w-[28px]" src="/assets/images/redditlogo-sm.svg" alt="reddit logo sm">
+      </div>
+      <!-- larger-screen -->
+      <div class="hidden md:block hidden-1290-668">
+        <img class="h-10 mx-2 my-2" src="/assets/images/redditlogo-md.svg" alt="reddit logo md">
+      </div>
+    </div>
+    <!-- middle-section -->
+    <div class="  flex-2 items-center justify-center md:h-full md:flex hidden ">
+      <div
+        class="   m-3 sm:visible flex  h-9 md:w-4/6 lg:w-[50%] bg-[#2a3236] items-center rounded-full hover:bg-[#333d42]  invisible">
+        <img class="m-2 h-8 no-select" src="../assets/icons/search.svg">
+        <input class="bg-transparent outline-none text-[#8ba2ad]" type="text" placeholder="Search"></input>
+      </div>
+    </div>
+    <!-- right-section -->
+    <div class=" flex  no-select items-center justify-between text-white ">
+      <button
+        class="ml-1 h-[35px] w-2/3 text-xs text-nowrap  flex hover:bg-[#333d42] bg-[#2a3236]  gap-2 rounded-full items-center justify-center ">
+        <img class="h-[25px] ml-2 md:flex hidden " src="../assets/icons/scanner.svg " alt="scanner">
+        Get App
+      </button>
+      <button class=" m-2  text-sm w-20 rounded-full h-[30px]  bg-[#d93900] hover:bg-[#ae2c00] ">
+        Log In
+      </button>
+      <button
+        class=" active:bg-opacity-10 m-2 w-10 h-[30px] rounded-full hover:bg-[#333d42] items-center  md:flex hidden">
+        <img class="h-8" src="../assets/icons/dotMenu.svg" alt="dotMenu">
+      </button>
+
+    </div>
+  </div>
+  <!-- side-nav-section -->
+  <div id="side-nav"
+    class="fixed w-[18vw] no-select h-full bg-[#0e1113] z-40 pt-[8vh] px-4 text-white border-r border-[#3e4142] md:block hidden text-nowrap list-none leading-10 scroll-m-0 scroll-smooth overflow-x-hidden custom-scrollbar  overflow-y-scroll md:min-w-[250px] min-w-[200px] hidden-1290-668">
+
+    <!-- section 1 -->
+    <div class="border-b-[1px]  border-[#3e4142] p-2">
+      <li>
+        <div class=" flex items-center gap-2 p-1 rounded-md text-white hover:bg-[#181c1f] active:bg-[#2a3236]">
+          <img class="h-[30px] w-[30px] " src="../assets/icons/home.svg">
+          Home
+        </div>
+      </li>
+      <li>
+        <div class=" flex items-center gap-2 p-1 rounded-md text-white hover:bg-[#181c1f] active:bg-[#2a3236]">
+          <img class="h-[30px] w-[30px] " src="../assets/icons/popular.svg">
+          Popular
+        </div>
+      </li>
+    </div>
+    <!-- section 2 -->
+
+    <!-- topics div -->
+    <div class="border-b-[1px]   border-[#3e4142] p-2 ">
+      <!-- topic-head -->
+      <div class="  flex items-center gap-2 p-1 rounded-md text-white hover:bg-[#181c1f] active:bg-[#2a3236]">
+        <div class="flex text-sm text-[#748791] flex-1 ">
+          TOPICS
+        </div>
+        <div class="flex justify-end items-center flex-2">
+          <img id="Topic-head" class="cursor-pointer" src="../assets/icons/dropDownArror.svg" alt="DropDownArrow">
+        </div>
+      </div>
+      <!-- topic-content -->
+      <div class="hidden" id="Topic-content">
+        <!-- internet -->
+
+        <!-- internet-head -->
+        <div
+          class="flex items-center   text-sm w-full rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236] leading-10 p-1 gap-2">
+          <div class="flex-2 flex items-center align-middle text-nowrap gap-2">
+            <img class="h-[20px] w-[20px] justify-start" src="../assets/icons/internet-culture.svg">
+            Internet Culture
+          </div>
+          <!-- internet drop button -->
+          <img id="internet" class="flex-1 h-[15px] w-[15px]" src="../assets/icons/dropDownArror.svg">
+        </div>
+        <!-- internet content -->
+        <ul class="border-l-2 border-[#3e4142]  dropdown  p-2 m-3 text-sm leading-9 hidden" id="internet-content">
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Amazing</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Animals & Pets</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Cringe & Facepalm</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Funny</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Interesting</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Memes</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Oddly Satisfying</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Reddit Meta</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Wholesome & Heartwarming
+          </li>
+        </ul>
+
+        <!-- game -->
+        <!-- game head-->
+        <div
+          class="flex items-center  text-sm w-full rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236] leading-10 p-1 gap-2">
+          <div class="flex-2 flex items-center align-middle text-nowrap gap-2">
+            <img class="h-[20px] w-[20px] justify-start" src="../assets/icons/games.svg">
+            Games
+          </div>
+          <img id="games" class="flex-1 h-[15px] w-[15px]" src="../assets/icons/dropDownArror.svg">
+        </div>
+        <!-- game-content -->
+        <ul id="games-content" class="border-l-2 border-[#3e4142]  dropdown  p-2 m-3 text-sm leading-9 hidden">
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Action Games</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Adventure Games</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Esports</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Gaming Consoles & Gear
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Gaming News & Discussion
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Mobile Games</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Other Games</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Role-Playing Games</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Simulation Games</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Sports & Racing Games
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Strategy Games</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Tabletop Games</li>
+        </ul>
+
+        <!-- Qa -->
+        <!-- qa head -->
+        <div
+          class="flex items-center  text-sm w-full rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236] leading-10 p-1 gap-2">
+          <div class="flex-2 flex items-center align-middle text-nowrap gap-2">
+            <img class="h-[20px] w-[20px] justify-start" src="../assets/icons/QAs.svg">
+            Q&As
+          </div>
+          <img id="QA" class="flex-1 h-[15px] w-[15px]" src="../assets/icons/dropDownArror.svg">
+        </div>
+        <!-- qa content -->
+        <ul id="QA-content" class="border-l-2 border-[#3e4142]   dropdown p-2 m-3 text-sm leading-9 hidden">
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Q&As</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Stories & Confessions
+          </li>
+        </ul>
+
+        <!-- tech -->
+        <!-- tech head -->
+        <div
+          class="flex items-center  text-sm w-full rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236] leading-10 p-1 gap-2">
+          <div class="flex-2 flex items-center align-middle text-nowrap gap-2">
+            <img class="h-[20px] w-[20px] justify-start" src="../assets/icons/technology.svg">
+            Technology
+          </div>
+          <img id="tech" class="flex-1 h-[15px] w-[15px]" src="../assets/icons/dropDownArror.svg">
+        </div>
+        <!-- tech content -->
+        <ul id="tech-content" class="border-l-2 border-[#3e4142]  dropdown  p-2 m-3 text-sm leading-9 hidden">
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">3D Printing</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Artificial Intelligence &
+            ML</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Computers & Hardware</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Consumer Electronics</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">DIY Electronics</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Programming</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Software & Apps</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Streaming Services</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Tech News & Discussion
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Virtual & Augmented
+            Reality
+          </li>
+        </ul>
+
+        <!-- pop -->
+        <!-- pop head -->
+        <div
+          class="flex items-center  text-sm w-full rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236] leading-10 p-1 gap-2">
+          <div class="flex-2 flex items-center align-middle text-nowrap gap-2">
+            <img class="h-[20px] w-[20px] justify-start" src="../assets/icons/pop-culture.svg">
+            Pop Culture
+          </div>
+          <img id="pop" class="flex-1 h-[15px] w-[15px]" src="../assets/icons/dropDownArror.svg">
+        </div>
+        <!-- pop content -->
+        <ul id="pop-content" class="border-l-2 border-[#3e4142]  dropdown  p-2 m-3 text-sm leading-9 hidden">
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Celebrities</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Creators & Influencers
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Generations & Nostalgia
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Podcasts</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Streamers</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Tarot & Astrology</li>
+        </ul>
+
+        <!-- movies -->
+        <!-- movies-head -->
+        <div
+          class="flex items-center  text-sm w-full rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236] leading-10 p-1 gap-2">
+          <div class="flex-2 flex items-center align-middle text-nowrap gap-2">
+            <img class="h-[20px] w-[20px] justify-start" src="../assets/icons/movies.svg">
+            Movies & TV
+          </div>
+          <img id="movies" class="flex-1 h-[15px] w-[15px]" src="../assets/icons/dropDownArror.svg">
+        </div>
+        <!-- movies content -->
+        <ul id="movies-content" class="border-l-2 border-[#3e4142]  dropdown   p-2 m-3 text-sm leading-9 hidden">
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Action Movies & Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Animated Movies & Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Comedy Movies & Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Crime Movies & Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Documentary Movies &
+            Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Drama Movies & Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Fantasy Movies & Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Horror Movies & Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Movie News & Discussion
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Reality TV</li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Romance Movies & Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Sci-Fi Movies & Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">Superhero Movies & Series
+          </li>
+          <li class="rounded-md cursor-pointer hover:bg-[#181c1f] active:bg-[#2a3236]">TV News & Discussion</li>
+        </ul>
+
+        <!-- seemore content -->
+        <span id="seeMoreNav-content" class="  dropdown hidden">
+
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/anime.svg">
+            Anime
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/arts.svg">
+            Arts
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/business.svg">
+            Business
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/collectibles.svg">
+            Collectibles & Hobbies
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/education.svg">
+            Education & Career
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/beauty.svg">
+            Fashion & Beauty
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/food.svg">
+            Food & Drinks
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/home.svg">
+            Home & Garden
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/law.svg">
+            Humanities & Law
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/Music.svg">
+            Music
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/outdoors.svg">
+            Nature & Outdoors
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/news.svg">
+            News & Politics
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/travels.svg">
+            Places & Travel
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/science.svg">
+            Science
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/sports.svg">
+            Sports
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/spooky.svg">
+            Spooky
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/vehicles.svg">
+            Vehicles
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/wellness.svg">
+            Wellness
+          </div>
+        </span>
+        <!-- see more button -->
+        <button id="seeMoreNav-btn" class="text-xs bg-transparent rounded-full mb-2 p-2 hover:bg-[#333d42]">See
+          More</button>
+      </div>
+    </div>
+    <!-- resources div -->
+    <div class=" mt-2 text-white">
+      <div class=" mx-2   flex p-1  text-[#748791] rounded-md text-sm hover:bg-[#181c1f] active:bg-[#2a3236]">
+        RESOURCES
+        <div class="flex justify-end items-center flex-2">
+          <img id="resource-head" src="../assets/icons/dropDownArror.svg" alt="DropDownArrow">
+        </div>
+      </div>
+      <!-- Hidden -->
+      <div id="resource-content" class=" dropdown hidden">
+        <div
+          class="flex items-center leading-10 text-sm rounde d-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+          <img src="../assets/icons/about.svg">
+          About Reddit
+        </div>
+        <div
+          class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+          <img src="../assets/icons/advertise.svg">
+          Advertisement
+        </div>
+        <div
+          class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+          <img src="../assets/icons/Help.svg">
+          Help
+        </div>
+        <div
+          class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+          <img src="../assets/icons/Blog.svg">
+          Blog
+        </div>
+        <div
+          class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+          <img src="../assets/icons/Careers.svg">
+          Careers
+        </div>
+        <div
+          class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+          <img src="../assets/icons/press.svg">
+          Press
+        </div>
+        <div class="border-b-[1px]  border-[#3e4142] ">
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/communities.svg">
+            Communities
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/about.svg">
+            Best of Reddit
+          </div>
+          <div
+            class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+            <img src="../assets/icons/topics.svg">
+            Topics
+          </div>
+        </div>
+        <div
+          class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+          <img src="../assets/icons/Policy.svg">
+          Content Policy
+        </div>
+        <div
+          class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+          <img src="../assets/icons/privacy.svg">
+          Privacy Policy
+        </div>
+        <div
+          class="flex items-center leading-10 text-sm rounded-md text-nowrap w-full hover:bg-[#181c1f] active:bg-[#2a3236] cursor-pointer p-1 gap-2">
+          <img src="../assets/icons/Agreement.svg">
+          User Agreement
+        </div>
+      </div>
+    </div>
+
+    <!-- section-3 -->
+    <!-- Footer -->
+    <div id="navfooter" class="text-[10px] text-[#acacac]  fixed bottom-0 left-8">
+      Reddit, Inc. 2024, All rights reserved
+    </div>
+  </div>
+  <!-- Main Content-section -->
+  <div class="pt-[8vh] p-1 md:pl-[19vw] paddingleft-1290-668">
+    <!-- slider -->
+    <!-- slider-wrapper -->
+    <div class="relative no-select  md:p-2 m-0 w-full hidden md:block">
+      <button id="left"
+        class="arrowIcons bg-black rounded-full p-2  absolute z-[100]  top-1/3 translate-y-1/2 transform first:left-4  ">
+        <img src="../assets/icons/arrowleft.svg">
+      </button>
+      <!-- slider-crousel or cardList-->
+      <div
+        class=" card-list cursor-pointer rounded-md scroll-smooth whitespace-nowrap  overflow-hidden  h-[205px] dragging">
+
+        <!-- slider-items or card item-->
+        <div
+          class="card-items group no-select h-[193px] w-[290px] inline-block m-1 rounded-3xl relative overflow-hidden   ">
+          <img class="h-full " src="../assets/images/environment.jpg">
+          <span class="absolute inset-0 bg-black bg-opacity-60 group-hover:opacity-40"></span>
+          <div class="absolute bottom-5 mx-2 text-center text-white font-serif z-[20] ">
+            <div>
+              <p class="text-base font-bold  leading-3 mb-3 ">New Peacock Santuary in Karnataka</p>
+            </div>
+            <div>
+              <p class="text-sm leading-3 mb-2 text-left"> Karnataka Government anounces ne....</p>
+            </div>
+            <div class="flex items-center  mt-2">
+              <img src="../assets/images/profile-1.jpg " class="h-[30px] w-[30px] rounded-full">
+              <p class="text-xs leading-3 ml-2 text-center">
+                r/nature <span class="text-[#7ba2ad] text-xs">add more</span>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- slider-items -->
+        <div
+          class="card-items group no-select h-[193px] w-[290px] inline-block m-1 rounded-3xl relative overflow-hidden   ">
+          <img class="h-full " src="../assets/images/olympics.jpg">
+          <span class="absolute inset-0 bg-black bg-opacity-60 group-hover:opacity-40"></span>
+          <div class="absolute bottom-5 mx-2 text-center text-white font-serif z-[20] ">
+            <div>
+              <p class="text-base font-bold  leading-3 mb-3 ">Olympics Day 12</p>
+            </div>
+            <div>
+              <p class="text-sm leading-3 mb-2 text-left"> Olympic Day 12 MegaThread wed....</p>
+            </div>
+            <div class="flex items-center  mt-2">
+              <img src="../assets/images/profile-2.jpg" class="h-[30px] w-[30px] rounded-full">
+              <p class="text-xs leading-3 ml-2 text-center">
+                r/Olympics <span class="text-[#7ba2ad] text-xs text-">add more</span>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- slider-items -->
+        <div
+          class="card-items group no-select h-[193px] w-[290px] inline-block m-1 rounded-3xl relative overflow-hidden   ">
+          <img class="h-full " src="../assets/images/science.jpg">
+          <span class="absolute inset-0 bg-black bg-opacity-60 group-hover:opacity-40"></span>
+          <div class="absolute bottom-5 mx-2 text-center text-white font-serif z-[20] ">
+            <div>
+              <p class="text-base font-bold  leading-3 mb-3 ">India-Eu Collaboration</p>
+            </div>
+            <div>
+              <p class="text-sm leading-3 mb-2 text-left"> Key new innovative technologies result....</p>
+            </div>
+            <div class="flex items-center  mt-2">
+              <img src="../assets/images/profile-3.jpg " class="h-[30px] w-[30px] rounded-full">
+              <p class="text-xs leading-3 ml-2 text-center">
+                r/science <span class="text-[#7ba2ad] text-xs text-">add more</span>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- slider-items -->
+        <div
+          class="card-items group no-select h-[193px] w-[290px] inline-block m-1 rounded-3xl relative overflow-hidden   ">
+          <img class="h-full " src="../assets/images/Boilers.jpg">
+          <span class="absolute inset-0 bg-black bg-opacity-60 group-hover:opacity-40"></span>
+          <div class="absolute bottom-5 mx-2 text-center text-white font-serif z-[20] ">
+            <div>
+              <p class="text-base font-bold  leading-3 mb-3 ">Boilers Bill 2024</p>
+            </div>
+            <div>
+              <p class="text-sm leading-3 mb-2 text-left"> On 2nd August 2024,the Union Cabine...</p>
+            </div>
+            <div class="flex items-center  mt-2">
+              <img src="../assets/images/profile-4.jpg " class="h-[30px] w-[30px] rounded-full">
+              <p class="text-xs leading-3 ml-2 text-center">
+                r/technology <span class="text-[#7ba2ad] text-xs text-">add more</span>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- slider-items -->
+        <div
+          class="card-items group no-select h-[193px] w-[290px] inline-block m-1 rounded-3xl relative overflow-hidden   ">
+          <img class="h-full " src="../assets/images/volley ball.jpg">
+          <span class="absolute inset-0 bg-black bg-opacity-60 group-hover:opacity-40"></span>
+          <div class="absolute bottom-5 mx-2 text-center text-white font-serif z-[20] ">
+            <div>
+              <p class="text-base font-bold  leading-3 mb-3 ">Women's Volleyball League</p>
+            </div>
+            <div>
+              <p class="text-sm leading-3 mb-2 text-left"> India won second title in CAVA Women......</p>
+            </div>
+            <div class="flex items-center  mt-2">
+              <img src="../assets/images/profile-5.jpg " class="h-[30px] w-[30px] rounded-full">
+              <p class="text-xs leading-3 ml-2 text-center">
+                r/sports <span class="text-[#7ba2ad] text-xs text-">add more</span>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- slider-items -->
+        <div
+          class="card-items group no-select h-[193px] w-[290px] inline-block m-1 rounded-3xl relative overflow-hidden   ">
+          <img class="h-full " src="../assets/images/president.jpg">
+          <span class="absolute inset-0 bg-black bg-opacity-60 group-hover:opacity-40"></span>
+          <div class="absolute bottom-5 mx-2 text-center text-white font-serif z-[20] ">
+            <div>
+              <p class="text-base font-bold  leading-3 mb-3 ">President Droupadi Murmu in Fiji</p>
+            </div>
+            <div>
+              <p class="text-sm leading-3 mb-2 text-left"> Indian President's 2days state visit Fiji</p>
+            </div>
+            <div class="flex items-center  mt-2">
+              <img src="../assets/images/profile-6.jpg " class="h-[30px] w-[30px] rounded-full">
+              <p class="text-xs leading-3 ml-2 text-center">
+                r/governance <span class="text-[#7ba2ad] text-xs text-">add more</span>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- slider-items -->
+        <div
+          class="card-items group no-select h-[193px] w-[290px] inline-block m-1 rounded-3xl relative overflow-hidden   ">
+          <img class="h-full " src="../assets/images/vinesh phogat.jpg">
+          <span class="absolute inset-0 bg-black bg-opacity-60 group-hover:opacity-40"></span>
+          <div class="absolute bottom-5 mx-2 text-center text-white font-serif z-[20] ">
+            <div>
+              <p class="text-base font-bold  leading-3 mb-3 ">Vinesh Phogat Retires</p>
+            </div>
+            <div>
+              <p class="text-sm leading-3 mb-2 text-left"> Vinesh Phogat Retires after playing last....</p>
+            </div>
+            <div class="flex items-center  mt-2">
+              <img src="../assets/images/profile-7.png " class="h-[30px] w-[30px] rounded-full">
+              <p class="text-xs leading-3 ml-2 text-center">
+                r/olympics <span class="text-[#7ba2ad] text-xs text-">add more</span>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- slider-items -->
+        <div
+          class="card-items group no-select h-[193px] w-[290px] inline-block m-1 rounded-3xl relative overflow-hidden   ">
+          <img class="h-full " src="../assets/images/navy.jpg">
+          <span class="absolute inset-0 bg-black bg-opacity-60 group-hover:opacity-40"></span>
+          <div class="absolute bottom-5 mx-2 text-center text-white font-serif z-[20] ">
+            <div>
+              <p class="text-base font-bold  leading-3 mb-3 ">INS conducted Partership</p>
+            </div>
+            <div>
+              <p class="text-sm leading-3 mb-2 text-left"> INS Tabar conducted Maritime Partner... </p>
+            </div>
+            <div class="flex items-center  mt-2">
+              <img src="../assets/images/profile-8.jpg " class="h-[30px] w-[30px] rounded-full">
+              <p class="text-xs leading-3 ml-2 text-center">
+                r/defence <span class="text-[#7ba2ad] text-xs text-">add more</span>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+      <button id="right"
+        class="arrowIcons bg-black rounded-full p-2  absolute z-[100] top-1/3 right-0 translate-y-1/2 transform last:right-4">
+        <img src="../assets/icons/arrowright.svg">
+      </button>
+    </div>
+    <!-- feed community div -->
+    <div class="flex p-1  md:p-5 ">
+      <!-- feed column -->
+      <div class="flex-3 h-full">
+        <!-- sorting filters -->
+        <div class="flex w-full gap-2 no-select border-b-[1px] border-[#333d42]">
+          <div class="relative">
+            <button id="sortTimeBtn"
+              class="relative items-center font-medium rounded-full flex text-xs text-[#8ba2ad] p-1 gap-2 hover:bg-[#333d42]">
+              Hot
+              <img src="../assets/icons/dropDownArrormenu.svg" class="h-3 fill-[#8ba2ad]">
+            </button>
+            <div id="sortTime"
+              class="absolute top-9 rounded-lg text-nowrap  cursor-pointer bg-[#181c1f] list-none p-2 m-2 leading-8 w-max text-white text-base hidden">
+              <h6 class="font-semibold">Sort By</h6>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Best</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">New</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Top</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Hot</li>
+            </div>
+          </div>
+
+          <div class="relative">
+            <button id="sortCountryBtn"
+              class="relative items-center font-medium rounded-full flex text-xs text-[#8ba2ad] p-1 gap-2 hover:bg-[#333d42]">
+              Country
+              <img src="../assets/icons/dropDownArrormenu.svg" class="h-3 fill-[#8ba2ad]">
+            </button>
+
+            <div id="sortCountry" class="absolute top-9 rounded-lg text-nowrap no-select cursor-pointer bg-[#181c1f] list-none p-2 m-2 leading-8 w-max
+               text-white text-base max-h-[250px] overflow-y-auto overflow-x-hidden custom-scrollbar hidden ">
+              <h6 class="font-semibold">Sort By</h6>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Everywhere</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">America</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Australia</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Bulgaria</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Canada</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Chile</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Colombia</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Czech Republic</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Finland</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">France</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Germany</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Greece</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Hungary</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Iceland</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">India</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Ireland</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Italy</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Japan</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Malaysia</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Mexico</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">New Zealand</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Philippines</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Poland</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Portugal</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Puerto Rico</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Romania</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Serbia</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Singapore</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Spain</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Sweden</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Taiwan</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Thailand</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">Turkey</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">United Kingdom</li>
+              <li class="hover:bg-[#2a3236] rounded-lg p-1  text-sm">United States</li>
+            </div>
+          </div>
+          <div class="relative">
+            <button
+              class="relative items-center font-medium rounded-full flex text-xs text-[#8ba2ad] p-1 gap-2 hover:bg-[#333d42]"
+              id="viewBtn">
+              <img src="../assets/icons/layout.svg" class="h-5 fill-[#8ba2ad]">
+              <img src="../assets/icons/dropDownArrormenu.svg" class="h-3 fill-[#8ba2ad]">
+            </button>
+            <div class="absolute top-9 rounded-lg text-nowrap no-select cursor-pointer bg-[#181c1f]  p-2 m-2 leading-8 w-max
+             text-white text-base max-h-[250px]  hidden" id="viewList">
+              <h6 class="font-semibold">Sort By</h6>
+              <div class="flex text-xs gap-2 hover:bg-[#2a3236] rounded-lg p-1 leading-8 items-center">
+                <img src="../assets/icons/layout.svg" class="w-[30px] h-[30px]">
+                Card
+              </div>
+              <div class="flex text-xs gap-2 hover:bg-[#2a3236] rounded-lg p-1 leading-8 items-center">
+                <img src="../assets/icons/compactlayout.svg" class="w-[30px] h-[30px]">
+                Compact
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- post -->
+        <div class=" h-full p-0 m-0 md:p-2 md:m-2">
+          <!-- post-item -->
+          <div class="hover:bg-[#181c1f] rounded-md border-b-[1px] border-[#333d42] no-select p-2">
+            <!-- post-item-header -->
+            <div class="flex justify-between items-center p-2 no-select">
+              <!-- left-section -->
+              <div class="flex items-center gap-2">
+                <img src="../assets/images/profile-1.jpg" class="h-[30px] w-[30px] rounded-full">
+                <p class="text-sm text-[#b7cad4] font-medium">
+                  <span class="hover:text-[#90a9fd] cursor-pointer">r/indiasocial </span> <span class="text-[#8ba2ad]">
+                    <span class="font-bold text-base">&#183;</span> 5 hours
+                    ago </span>
+                </p>
+              </div>
+              <!-- right-section -->
+              <div class="flex items-center gap-2">
+                <button class="rounded-2xl bg-[#115bca] hover:bg-[#1870f4] text-white font-bold text-sm p-2">
+                  Join
+                </button>
+                <img src="../assets/icons/dotMenu.svg" class="rounded-full hover:bg-[#333d42] p-2">
+
+              </div>
+            </div>
+            <!-- post content -->
+            <div class=" px-2">
+              <p class="text-xl text-white font-semibold  leading-8 ">Attempted murder on Indian student in
+                Uppsala(Sweden)</p>
+              <!-- content -->
+              <div class=" m-2">
+                <p class="text-sm text-[#b7cad4] leading-8 text-justify">
+                  My brother, who is currently pursuing his master's degree from Uppsala University in Sweden, was
+                  attacked on his way back to his dorm room last night. He was struck on the head multiple times with a
+                  blunt weapon, suffered heavy blood loss, has 7 stitches in the middle of the head(above the parietal
+                  bone). The attacker left him to die on the roadside, but somehow he regained consciousness and made
+                  his
+                  way to safety....
+                </p>
+              </div>
+
+            </div>
+            <!-- post-footer -->
+            <div class="flex gap-2 p-2">
+              <!-- like-unlike-button -->
+              <div class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white min-w-max flex items-center gap-1 text-sm">
+                <svg class="rounded-full group hover:bg-[#333d42] h-full w-[20px] " xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em" height="1.2em" viewBox="0 0 48 48">
+                  <path class="group-hover:stroke-blue-700" fill="none" stroke="white" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.6" d="M5 24L24 6l19 18H31v18H17V24z" />
+                </svg>
+                12.54K
+                <svg class="rounded-full group hover:bg-[#333d42] h-full w-[20px] " xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em" height="1.2em" viewBox="0 0 48 48">
+                  <path class="group-hover:stroke-red-600" fill="none" stroke="white" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.6" d="m5 24l19 18l19-18H31V6H17v18z" />
+                </svg>
+              </div>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/comment.svg">
+                12.90K
+              </button>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/award.svg">
+
+              </button>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/share.svg">
+                SHARE
+              </button>
+
+
+            </div>
+          </div>
+
+          <!-- post-item -->
+          <div class="hover:bg-[#181c1f] rounded-md border-b-[1px] border-[#333d42] no-select p-2">
+            <!-- post-item-header -->
+            <div class="flex justify-between items-center p-2 no-select">
+              <!-- left-section -->
+              <div class="flex items-center gap-2">
+                <img src="../assets/images/profile-2.jpg" class="h-[30px] w-[30px] rounded-full">
+                <p class="text-sm text-[#b7cad4] font-medium">
+                  <span class="hover:text-[#90a9fd] cursor-pointer">r/heloasocial </span> <span class="text-[#8ba2ad]">
+                    <span class="font-bold text-base">&#183;</span> 8 hours
+                    ago </span>
+                </p>
+              </div>
+              <!-- right-section -->
+              <div class="flex items-center gap-2">
+                <button class="rounded-2xl bg-[#115bca] hover:bg-[#1870f4] text-white font-bold text-sm p-2">
+                  Join
+                </button>
+                <img src="../assets/icons/dotMenu.svg" class="rounded-full hover:bg-[#333d42] p-2">
+
+              </div>
+            </div>
+            <!-- post content -->
+            <div class=" px-2">
+              <p class="text-xl text-white font-semibold  leading-8 "> Aman Sehrawat wins Men's Freestyle 57 kg
+                Wrestling Bronze. 6th Medal for India at Olympics 2024</p>
+              <!-- content -->
+              <div class="  m-2 ">
+                <img class="h-4/5 rounded-md"
+                  src="../assets/post/aman-sehrawat-wins-mens-freestyle-57-kg-wrestling-bronze-v0-sjrd4bk4fohd1.webp">
+              </div>
+
+            </div>
+            <!-- post-footer -->
+            <div class="flex gap-2 p-2">
+              <!-- like-unlike-button -->
+              <div class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white min-w-max flex items-center gap-1 text-sm">
+                <svg class="rounded-full group hover:bg-[#333d42] h-full w-[20px] " xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em" height="1.2em" viewBox="0 0 48 48">
+                  <path class="group-hover:stroke-blue-700" fill="none" stroke="white" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.6" d="M5 24L24 6l19 18H31v18H17V24z" />
+                </svg>
+                12.54K
+                <svg class="rounded-full group hover:bg-[#333d42] h-full w-[20px] " xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em" height="1.2em" viewBox="0 0 48 48">
+                  <path class="group-hover:stroke-red-600" fill="none" stroke="white" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.6" d="m5 24l19 18l19-18H31V6H17v18z" />
+                </svg>
+              </div>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/comment.svg">
+                12.90K
+              </button>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/award.svg">
+
+              </button>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/share.svg">
+                SHARE
+              </button>
+
+
+            </div>
+          </div>
+
+          <!-- post-item -->
+          <div class="hover:bg-[#181c1f] rounded-md border-b-[1px] border-[#333d42] no-select p-2">
+            <!-- post-item-header -->
+            <div class="flex justify-between items-center p-2 no-select">
+              <!-- left-section -->
+              <div class="flex items-center gap-2">
+                <img src="../assets/images/profile-3.jpg" class="h-[30px] w-[30px] rounded-full">
+                <p class="text-sm text-[#b7cad4] font-medium">
+                  <span class="hover:text-[#90a9fd] cursor-pointer">r/gajkslnl </span> <span class="text-[#8ba2ad]">
+                    <span class="font-bold text-base">&#183;</span> 5 hours
+                    ago </span>
+                </p>
+              </div>
+              <!-- right-section -->
+              <div class="flex items-center gap-2">
+                <button class="rounded-2xl bg-[#115bca] hover:bg-[#1870f4] text-white font-bold text-sm p-2">
+                  Join
+                </button>
+                <img src="../assets/icons/dotMenu.svg" class="rounded-full hover:bg-[#333d42] p-2">
+
+              </div>
+            </div>
+            <!-- post content -->
+            <div class=" px-2">
+              <p class="text-xl text-white font-semibold  leading-8 "> A plane with 62 passengers aboard just fell in
+                Vinhedo - Brazil</p>
+              <!-- content -->
+              <div class="m-2 justify-center flex">
+                <video autoplay controls>
+                  <source src="../assets/post/m2-res_640p.mp4" type="video/mp4">
+
+                </video>
+              </div>
+
+            </div>
+            <!-- post-footer -->
+            <div class="flex gap-2 p-2">
+              <!-- like-unlike-button -->
+              <div class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white min-w-max flex items-center gap-1 text-sm">
+                <svg class="rounded-full group hover:bg-[#333d42] h-full w-[20px] " xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em" height="1.2em" viewBox="0 0 48 48">
+                  <path class="group-hover:stroke-blue-700" fill="none" stroke="white" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.6" d="M5 24L24 6l19 18H31v18H17V24z" />
+                </svg>
+                12.54K
+                <svg class="rounded-full group hover:bg-[#333d42] h-full w-[20px] " xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em" height="1.2em" viewBox="0 0 48 48">
+                  <path class="group-hover:stroke-red-600" fill="none" stroke="white" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.6" d="m5 24l19 18l19-18H31V6H17v18z" />
+                </svg>
+              </div>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/comment.svg">
+                12.90K
+              </button>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/award.svg">
+
+              </button>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/share.svg">
+                SHARE
+              </button>
+
+
+            </div>
+          </div>
+
+          <!-- post-item -->
+          <div class="hover:bg-[#181c1f] rounded-md border-b-[1px] border-[#333d42] no-select p-2">
+            <!-- post-item-header -->
+            <div class="flex justify-between items-center p-2 no-select">
+              <!-- left-section -->
+              <div class="flex items-center gap-2">
+                <img src="../assets/images/profile-6.jpg" class="h-[30px] w-[30px] rounded-full">
+                <p class="text-sm text-[#b7cad4] font-medium">
+                  <span class="hover:text-[#90a9fd] cursor-pointer">r/indiasocial </span> <span class="text-[#8ba2ad]">
+                    <span class="font-bold text-base">&#183;</span> 5 hours
+                    ago </span>
+                </p>
+              </div>
+              <!-- right-section -->
+              <div class="flex items-center gap-2">
+                <button class="rounded-2xl bg-[#115bca] hover:bg-[#1870f4] text-white font-bold text-sm p-2">
+                  Join
+                </button>
+                <img src="../assets/icons/dotMenu.svg" class="rounded-full hover:bg-[#333d42] p-2">
+
+              </div>
+            </div>
+            <!-- post content -->
+            <div class=" px-2">
+              <p class="text-xl text-white font-semibold  leading-8 ">Attempted murder on Indian student in
+                Uppsala(Sweden)</p>
+              <!-- content -->
+              <div class="m-2">
+                <p class="text-sm text-[#b7cad4] leading-8 text-justify">
+                  My brother, who is currently pursuing his master's degree from Uppsala University in Sweden, was
+                  attacked on his way back to his dorm room last night. He was struck on the head multiple times with a
+                  blunt weapon, suffered heavy blood loss, has 7 stitches in the middle of the head(above the parietal
+                  bone). The attacker left him to die on the roadside, but somehow he regained consciousness and made
+                  his
+                  way to safety....
+                </p>
+              </div>
+
+            </div>
+            <!-- post-footer -->
+            <div class="flex gap-2 p-2">
+              <!-- like-unlike-button -->
+              <div class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white min-w-max flex items-center gap-1 text-sm">
+                <svg class="rounded-full group hover:bg-[#333d42] h-full w-[20px] " xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em" height="1.2em" viewBox="0 0 48 48">
+                  <path class="group-hover:stroke-blue-700" fill="none" stroke="white" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.6" d="M5 24L24 6l19 18H31v18H17V24z" />
+                </svg>
+                12.54K
+                <svg class="rounded-full group hover:bg-[#333d42] h-full w-[20px] " xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em" height="1.2em" viewBox="0 0 48 48">
+                  <path class="group-hover:stroke-red-600" fill="none" stroke="white" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.6" d="m5 24l19 18l19-18H31V6H17v18z" />
+                </svg>
+              </div>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/comment.svg">
+                12.90K
+              </button>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/award.svg">
+
+              </button>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/share.svg">
+                SHARE
+              </button>
+
+
+            </div>
+          </div>
+
+          <!-- post-item -->
+          <div class="hover:bg-[#181c1f] rounded-md border-b-[1px] border-[#333d42] no-select p-2">
+            <!-- post-item-header -->
+            <div class="flex justify-between items-center p-2 no-select">
+              <!-- left-section -->
+              <div class="flex items-center gap-2">
+                <img src="../assets/images/profile-1.jpg" class="h-[30px] w-[30px] rounded-full">
+                <p class="text-sm text-[#b7cad4] font-medium">
+                  <span class="hover:text-[#90a9fd] cursor-pointer">r/indiasocial </span> <span class="text-[#8ba2ad]">
+                    <span class="font-bold text-base">&#183;</span> 5 hours
+                    ago </span>
+                </p>
+              </div>
+              <!-- right-section -->
+              <div class="flex items-center gap-2">
+                <button class="rounded-2xl bg-[#115bca] hover:bg-[#1870f4] text-white font-bold text-sm p-2">
+                  Join
+                </button>
+                <img src="../assets/icons/dotMenu.svg" class="rounded-full hover:bg-[#333d42] p-2">
+
+              </div>
+            </div>
+            <!-- post content -->
+            <div class=" px-2">
+              <p class="text-xl text-white font-semibold  leading-8 ">Attempted murder on Indian student in
+                Uppsala(Sweden)</p>
+              <!-- content -->
+              <div class="m-2">
+                <p class="text-sm text-[#b7cad4] leading-8 text-justify">
+                  My brother, who is currently pursuing his master's degree from Uppsala University in Sweden, was
+                  attacked on his way back to his dorm room last night. He was struck on the head multiple times with a
+                  blunt weapon, suffered heavy blood loss, has 7 stitches in the middle of the head(above the parietal
+                  bone). The attacker left him to die on the roadside, but somehow he regained consciousness and made
+                  his
+                  way to safety....
+                </p>
+              </div>
+
+            </div>
+            <!-- post-footer -->
+            <div class="flex gap-2 p-2">
+              <!-- like-unlike-button -->
+              <div class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white min-w-max flex items-center gap-1 text-sm">
+                <svg class="rounded-full group hover:bg-[#333d42] h-full w-[20px] " xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em" height="1.2em" viewBox="0 0 48 48">
+                  <path class="group-hover:stroke-blue-700" fill="none" stroke="white" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.6" d="M5 24L24 6l19 18H31v18H17V24z" />
+                </svg>
+                12.54K
+                <svg class="rounded-full group hover:bg-[#333d42] h-full w-[20px] " xmlns="http://www.w3.org/2000/svg"
+                  width="1.2em" height="1.2em" viewBox="0 0 48 48">
+                  <path class="group-hover:stroke-red-600" fill="none" stroke="white" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.6" d="m5 24l19 18l19-18H31V6H17v18z" />
+                </svg>
+              </div>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/comment.svg">
+                12.90K
+              </button>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/award.svg">
+
+              </button>
+              <button
+                class="rounded-full bg-[#2a3236] hover:cursor-pointer text-white flex hover:bg-[#333d42] items-center gap-1 text-sm  p-2">
+                <img class="h-[20px] w-[20px]" src="../assets/icons/share.svg">
+                SHARE
+              </button>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="md:block flex-1 hidden no-select  h-[200vh] relative p-4 pt-0">
+        <div
+          class="sticky min-w-[208px] max-h-[410px] overflow-y-scroll  custom-scrollbar top-20 bg-black  rounded-md p-5 ">
+
+          <h3 class=" text-[#8ba2ad] text-center text-sm mb-5">POPULAR COMMUNITIES</h3>
+          <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+            <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-1.jpg">
+            <div class="inline-block">
+              <p class="  text-[#8ba2ad] text-sm">
+                r/AskReddit
+              </p>
+              <p class="   text-[#b7cad4] text-xs">
+                47,676,638 members
+              </p>
+            </div>
+          </div>
+          <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+            <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-8.jpg">
+            <div class="inline-block">
+              <p class="  text-[#8ba2ad] text-sm">
+                r/leagueoflegends
+              </p>
+              <p class="   text-[#b7cad4] text-xs">
+                37,676,638 members
+              </p>
+            </div>
+          </div>
+          <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+            <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-6.jpg">
+            <div class="inline-block">
+              <p class="  text-[#8ba2ad] text-sm">
+                r/OutOfTheLoop
+              </p>
+              <p class="   text-[#b7cad4] text-xs">
+                33,876,638 members
+              </p>
+            </div>
+          </div>
+          <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+            <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-2.jpg">
+            <div class="inline-block">
+              <p class="  text-[#8ba2ad] text-sm">
+                r/discirdapp
+              </p>
+              <p class="   text-[#b7cad4] text-xs">
+                33,846,638 members
+              </p>
+            </div>
+          </div>
+          <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+            <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-3.jpg">
+            <div class="inline-block">
+              <p class="  text-[#8ba2ad] text-sm">
+                r/Twitch
+              </p>
+              <p class="   text-[#b7cad4] text-xs">
+                876,638 members
+              </p>
+            </div>
+          </div>
+          <span id="community-see-more" class="hidden">
+            <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+              <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-4.jpg">
+              <div class="inline-block">
+                <p class="  text-[#8ba2ad] text-sm">
+                  r/AskReddit
+                </p>
+                <p class="   text-[#b7cad4] text-xs">
+                  33,876,638 members
+                </p>
+              </div>
+            </div>
+            <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+              <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-5.jpg">
+              <div class="inline-block">
+                <p class="  text-[#8ba2ad] text-sm">
+                  r/NoStupidQuestions
+                </p>
+                <p class="   text-[#b7cad4] text-xs">
+                  46,876,638 members
+                </p>
+              </div>
+            </div>
+            <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+              <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-6.jpg">
+              <div class="inline-block">
+                <p class="  text-[#8ba2ad] text-sm">
+                  r/NoStupidQuestions
+                </p>
+                <p class="   text-[#b7cad4] text-xs">
+                  33,876,638 members
+                </p>
+              </div>
+            </div>
+            <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+              <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-7.png">
+              <div class="inline-block">
+                <p class="  text-[#8ba2ad] text-sm">
+                  r/OutOfTheLoop
+                </p>
+                <p class="   text-[#b7cad4] text-xs">
+                  33,876,638 members
+                </p>
+              </div>
+            </div>
+            <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+              <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-8.jpg">
+              <div class="inline-block">
+                <p class="  text-[#8ba2ad] text-sm">
+                  r/OutOfTheLoop
+                </p>
+                <p class="   text-[#b7cad4] text-xs">
+                  33,876,638 members
+                </p>
+              </div>
+            </div>
+            <div class="flex-row  p-2 flex items-center gap-2 mb-2 rounded-md hover:bg-[#181c1f] cursor-pointer">
+              <img class="inline-block h-[35px] w-[35px] rounded-full " src="../assets/images/profile-1.jpg">
+              <div class="inline-block">
+                <p class="  text-[#8ba2ad] text-sm">
+                  r/OutOfTheLoop
+                </p>
+                <p class="   text-[#b7cad4] text-xs">
+                  33,876,638 members
+                </p>
+              </div>
+            </div>
+          </span>
+          <div>
+            <button id="see-more-btn-popularcom" class="text-white text-sm p-1 rounded-full hover:bg-[#333d42]">See
+              More</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+  <script src="nav.js"></script>
+  <script src="slider.js"></script>
+  <script src="filter.js"></script>
+
+</body>
+
+</html>
